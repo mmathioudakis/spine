@@ -103,11 +103,6 @@ public class ICEstimateEM extends ICEstimate implements Iterative {
 		ObjectOpenHashSet<IntOpenHashSet> nodeChunks = Utilities
 				.partitionIntoChunks(allNodes, numOfChunks);
 
-		int totalNodes = 0;
-		for (IntOpenHashSet chunk : nodeChunks) {
-			totalNodes += chunk.size();
-		}
-
 		// Initialize probabilities
 		ObjectOpenHashSet<SparseDoubleMatrix2D> currentProbsInChunks = new ObjectOpenHashSet<SparseDoubleMatrix2D>();
 		for (IntOpenHashSet chunk : nodeChunks) {

@@ -779,6 +779,7 @@ public class ICModel extends PropagationModel {
 		} else if (jsapResult.getBoolean("run")) {
 			if (!jsapResult.userSpecified("start-node")) {
 				System.err.println("Must specify starting node");
+				ps.close();
 				return;
 			}
 			Node startNode = new Node(jsapResult.getString("start-node"));
@@ -808,6 +809,7 @@ public class ICModel extends PropagationModel {
 
 		} else {
 			System.err.println("Indicate one operation");
+			ps.close();
 			return;
 		}
 	}
